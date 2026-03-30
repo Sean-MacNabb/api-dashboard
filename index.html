@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Api Dashboard</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">   
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <h1 class="main-title">JavaScript API Dashboard</h1>
+
+   <div class="grid-container">
+
+      <section class="grid-item" id="dog-api">
+         <h2>🐶 HTTP Status Dog Images</h2>
+         <select id="code-select">
+            <option value="" disabled selected>Select a status code...</option>
+            <option value="102">102 - Processing</option>
+            <option value="200">200 - OK</option>
+            <option value="204">204 - No Content</option>
+            <option value="206">206 - Partial Content</option>
+            <option value="301">301 - Moved Permanently</option>
+            <option value="307">307 - Temporary Redirect</option>
+            <option value="400">400 - Bad Request</option>
+            <option value="404">404 - Not Found</option>
+            <option value="408">408 - Request Timeout</option>
+            <option value="419">419 - Page Expired</option>
+            <option value="500">500 - Internal Server Error</option>
+            <option value="502">502 - Bad Gateway</option>
+            <option value="521">521 - Web Server Is Down</option>
+            <option value="530">530 - Site is frozen</option>
+            <option value="999">999 - Request Denied</option>
+         </select>
+         <button id="get-dog-status-image">See Image</button>
+         <div class="output" id="dog-output"></div>
+      </section>
+
+      <section class="grid-item" id="dictionary-api">
+         <h2>📚 Dictionary</h2>
+         <input type="text" id="get-word" placeholder="Enter a word...">
+         <button id="get-definition">Get Definition</button>
+         <div class="output" id="dictionary-output"></div>
+      </section>
+
+      <section class="grid-item" id="weather-api">
+         <h2>☀️ Weather Info</h2>
+         <input type="text" id="get-city" placeholder="Enter a city or country...">
+         <div class="weather-options">
+            <div class="segmented">
+               <input type="radio" id="temp-f" name="temp-unit" value="fahrenheit" checked>
+               <label for="temp-f">°F</label>
+
+               <input type="radio" id="temp-c" name="temp-unit" value="celsius">
+               <label for="temp-c">°C</label>
+            </div>
+
+            <div class="segmented">
+               <input type="radio" id="precip-in" name="precip-unit" value="inch" checked>
+               <label for="precip-in">in</label>
+
+               <input type="radio" id="precip-mm" name="precip-unit" value="mm">
+               <label for="precip-mm">mm</label>
+            </div>
+
+            <div class="segmented">
+               <input type="radio" id="wind-mph" name="wind-unit" value="mph" checked>
+               <label for="wind-mph">mph</label>
+
+               <input type="radio" id="wind-kmh" name="wind-unit" value="kmh">
+               <label for="wind-kmh">km/h</label>
+            </div>
+
+         </div>
+         <button id="get-weather">Get Weather</button>
+         <div class="output" id="weather-output"></div>
+      </section>
+
+      <section class="grid-item" id="currency-api">
+         <h2>🪙 Currency Exchange Rates</h2>
+         <div class="currency-selects">
+            <select id="base-currency">
+               <option value="" disabled selected>Select base currency</option>
+               <option value="AED">AED (United Arab Emirates Dirham)</option>
+               <option value="AUD">AUD (Australian Dollar)</option>
+               <option value="CAD">CAD (Canadian Dollar)</option>
+               <option value="CHF">CHF (Swiss Franc)</option>
+               <option value="CNY">CNY (Chinese Yuan)</option>
+               <option value="EUR">EUR (Euro)</option>
+               <option value="EGP">EGP (Egyptian Pound)</option>
+               <option value="GBP">GBP (British Pound)</option>
+               <option value="JPY">JPY (Japanese Yen)</option>
+               <option value="KRW">KRW (South Korean Won)</option>
+               <option value="MXN">MXN (Mexican Peso)</option>
+               <option value="NZD">NZD (New Zealand Dollar)</option>
+               <option value="SEK">SEK (Swedish Krona)</option>
+               <option value="RON">RON (Romanian Leu)</option>
+               <option value="RUB">RUB (Russian Ruble)</option>
+               <option value="TRY">TRY (Turkish Lira)</option>
+               <option value="SGD">SGD (Singapore Dollar)</option>
+               <option value="USD">USD (US Dollar)</option>
+               <option value="ZWG">ZWG (Zimbabwe Gold)</option>
+            </select>
+            <span class="currency-arrow"> → </span>
+            <select id="target-currency">
+               <option value="" disabled selected>Select target currency...</option>
+               <option value="AED">AED (United Arab Emirates Dirham)</option>
+               <option value="AUD">AUD (Australian Dollar)</option>
+               <option value="CAD">CAD (Canadian Dollar)</option>
+               <option value="CHF">CHF (Swiss Franc)</option>
+               <option value="CNY">CNY (Chinese Yuan)</option>
+               <option value="EUR">EUR (Euro)</option>
+               <option value="EGP">EGP (Egyptian Pound)</option>
+               <option value="GBP">GBP (British Pound)</option>
+               <option value="JPY">JPY (Japanese Yen)</option>
+               <option value="KRW">KRW (South Korean Won)</option>
+               <option value="MXN">MXN (Mexican Peso)</option>
+               <option value="NZD">NZD (New Zealand Dollar)</option>
+               <option value="SEK">SEK (Swedish Krona)</option>
+               <option value="RON">RON (Romanian Leu)</option>
+               <option value="RUB">RUB (Russian Ruble)</option>
+               <option value="TRY">TRY (Turkish Lira)</option>
+               <option value="SGD">SGD (Singapore Dollar)</option>
+               <option value="USD">USD (US Dollar)</option>
+               <option value="ZWG">ZWG (Zimbabwe Gold)</option>
+            </select>
+         </div>
+         <button id="get-rates">Get Rates</button>
+         <div class="output" id="currency-output"></div>
+      </section>
+
+      <section class="grid-item" id="fact-api">
+         <h2>📜 Random Useless Fact</h2>
+         <button id="get-quote">Get Fact</button>
+         <div class="output" id="fact-output"></div>
+      </section>
+
+      <section class="grid-item" id="trivia-api">
+         <h2>❓Random Trivia Question</h2>
+         <div class="trivia-options">
+            <div class="trivia-difficulty-wrapper">
+               <p>Difficulty:</p>
+               <label>
+                  <input type="radio" name="difficulty" value="easy" checked> Easy
+               </label>
+               <label>
+                  <input type="radio" name="difficulty" value="medium"> Medium
+               </label>
+               <label>
+                  <input type="radio" name="difficulty" value="hard"> Hard
+               </label>
+            </div>
+
+            <div class="trivia-answer-wrapper">
+               <p>Answer type:</p>
+               <label>
+                  <input type="radio" name="answer-type" value="multiple" checked> Multiple Choice
+               </label>
+               <label>
+                  <input type="radio" name="answer-type" value="boolean" > True/False
+               </label>
+            </div>
+         </div>
+         <button id="get-trivia">Get Question</button>
+         <div class="output" id="trivia-output"></div>
+      </section>
+
+      <section class="grid-item" id="pokemon-api">
+         <h2>🔥 Pokemon Info</h2>
+         <input type="text" id="get-pokemon-name" placeholder="Enter a Pokemon name...">
+         <button id="get-pokemon-info">Get Info</button>
+         <div class="output" id="pokemon-output"></div>
+      </section>
+      
+      <section class="grid-item" id="inspirational-quote-api">
+         <h2>✍🏽 Inspirational Quote</h2>
+         <button id="get-inspirational-quote">Get Quote</button>
+         <div class="output" id="inspirational-output"></div>
+      </section>
+
+   </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
