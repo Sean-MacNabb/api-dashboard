@@ -417,3 +417,60 @@ select {
   font-weight: 600;
   color: #f97316;
 }
+
+/* ----------- Tablets (<= 768px) ----------- */
+@media (max-width: 768px) {
+  body {
+    padding: 1.25rem;
+  }
+
+  .grid-item {
+    padding: 1rem;
+  }
+
+  .temp-div h2 {
+    font-size: 3rem;
+  }
+
+  #pokemon-output {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .pokemon-image {
+    margin: 0 auto;
+  }
+}
+
+/* ----------- Mobile (<= 480px) ----------- */
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 1.5rem;
+  }
+
+  .grid-container {
+    gap: 1rem;
+  }
+
+  .grid-item h2 {
+    font-size: 1.1rem;
+  }
+
+  .answer-div {
+    grid-template-columns: 1fr; /* trivia buttons stack */
+  }
+
+  .currency-selects {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .currency-arrow {
+    display: none;
+  }
+
+  .weather-options {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
