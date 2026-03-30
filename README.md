@@ -1,9 +1,10 @@
 # JavaScript API Dashboard
-
-An interactive web dashboard that integrates multiple public APIs into a single, responsive interface. This project demonstrates real-time data fetching, dynamic UI updates, and clean component-based layout using vanilla JavaScript.
+JavaScript API dashboard integrating 8 external endpoints with real-time data, dynamic UI, and responsive design.
 
 ## Overview
-This dashboard connects to 8 different APIs and displays their data through user-friendly components. Each section is designed to handle user input, fetch external data asynchronously, and render structured results dynamically.
+This dashboard connects to 8 different APIs and displays their data through interactive, user-driven components. Each section functions as a self-contained module that handles input, performs asynchronous API requests, and dynamically renders results to the UI.
+
+The project focuses on building a scalable front-end structure using vanilla JavaScript while reinforcing concepts such as async data handling, DOM manipulation, and responsive layout design.
 
 ![JavaScript API Dashboard](screenshots/api-dashboard.png)
 
@@ -15,9 +16,7 @@ The application emphasizes:
 
 The interface is built as a grid of independent API cards, each functioning as its own mini application.
 
-# Features
 ## Features
-
 ### API Gallery
 
 <table>
